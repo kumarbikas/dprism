@@ -1,0 +1,23 @@
+@media (min-width:320px) and (max-width:991px) {
+/* Login Home Page */
+.homePage p{padding:0;}
+
+}
+
+/* ========================================== Smaller Than 768 ========================================================= */
+@media screen and (max-width:767px) {
+/* Login Home Page */
+.loginPart .inner{height:270px;}
+.homePage p{padding:0;}
+.homePage h1{font-size:28px;font-weight:600;margin-bottom:10px;text-align:center;}
+}
+
+/* ========================================== Smaller Than 640 =================================================== */
+@media (min-width:320px) and (max-width:480px) {
+/* Login Home Page */
+.loginPart{float:none;margin:100px auto 0 auto;width:300px;}
+.loginPart .inner h4{border-bottom:1px solid #f1f1f1;}
+.loginPart .inner{background-color:#fff;}
+.forms .queue input{border: 1px solid #f7f3f3;}
+}
+

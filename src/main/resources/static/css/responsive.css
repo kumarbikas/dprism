@@ -1,0 +1,49 @@
+@media (min-width:320px) and (max-width:1280px) {
+.subNav li{padding:15px 8px;}
+
+
+
+}
+
+@media (min-width:320px) and (max-width:991px) {
+/* Login Home Page */
+.homePage p{padding:0;}
+
+}
+
+/* ========================================== Smaller Than 768 ========================================================= */
+@media screen and (max-width:767px) {
+#content{padding:0 20px 0 0;position:relative;transition:all 0.3s;width:100%;}	
+#sidebar{margin-left:-240px;}
+#sidebar.active{margin-left:0;}
+#content{padding:0 20px;}
+.mainContent{padding:15px;}
+
+/* Login Home Page */
+.homePage p{padding:0;}
+.homePage h1{font-size:28px;font-weight:600;margin-bottom:10px;text-align:center;}
+
+/* Sidebar Navigation */
+#sidebar nav ul li ul{border-right:1px solid #4b6b9c;border-bottom:1px solid #4b6b9c;display:none;position:static;width:240px;z-index:0;}
+#sidebar nav ul li:hover ul{display:block;left:240px;}
+#sidebar nav ul li ul li{background-color:#5577ab;}
+#sidebar nav ul li:hover ul li:hover{background-color:#4b6b9c;}
+#sidebar nav ul li.has-sub > a:after{content:'»';font-size:1.375rem;position:static;right:1em;}
+
+
+}
+
+/* ========================================== Smaller Than 640 =================================================== */
+@media (min-width:320px) and (max-width:480px) {
+/* Login Home Page */
+.loginPart{float:none;margin:100px auto 0 auto;width:300px;}
+.loginPart .inner h4{border-bottom:1px solid #f1f1f1;}
+.loginPart .inner{background-color:#fff;}
+.forms .queue input{border: 1px solid #f7f3f3;}
+
+
+}
+
+@media (min-width:320px) and (max-width:440px) {
+
+}
