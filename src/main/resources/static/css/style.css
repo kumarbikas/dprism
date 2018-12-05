@@ -23,7 +23,7 @@ header .userInfo li:last-child .users{height:33px;width:33px;padding:0;}
 header .userInfo li:last-child .users img{height:33px;width:33px;}
 
 /* Breadcrumb */
-.bcrumb{padding-left:30px;}
+.bcrumb{padding-left:10px;}
 .bcrumb .breadcrumb{background:none;border-radius:0;color:#b3b3b3;font-size:0.8125rem;list-style:none;margin-bottom:0;padding:0.9375rem 0;}
 .bcrumb .breadcrumb>li:first-child{padding:0;}
 .bcrumb .breadcrumb>li+li:before{color:#b3b3b3;content:"/\00a0";padding:0 0.3125rem;}
@@ -154,6 +154,7 @@ table.inner tr:nth-child(even){background:#f7f7f7;}
 /* Modal Dialog Box */
 .modalData{clear:both;}
 .modalData .modal-dialog{max-width:750px !important;}
+.modal-body{padding:0 1rem 1rem 1rem;}
 .modalData .modal-header{border-top-right-radius:3px;border-top-left-radius:3px;border:1px solid #d6d6d6;border-bottom:1px solid #fff;background-color:#5577ab;color:#fff;font-size:0.875rem;font-weight:600;padding:15px;}
 
 

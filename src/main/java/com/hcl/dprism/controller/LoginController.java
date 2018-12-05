@@ -22,7 +22,8 @@ public class LoginController {
     public String welcomePage(Model model) {
 	 	System.out.println("came to welcome controller ");
 	 	model.addAttribute("message", "Welcome to Demo Application");
-        return "welcome";
+       // return "welcome";
+	 	 return "help";
     }
 	
 	

@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Fragment for Sidebar -->
+<div id="sidebar" th:fragment="sidebar">
+  <div class="sideContent">
+    <div class="menu">
+      <ul>
+        <li class="heading">Foundation</li>
+        <li class="current"><a href="user.html"><i class="fa fa-user-circle-o"></i> User</a></li>
+         <li><a th:href="@{/company}"><i class="fa fa-building-o"></i>Company</a></li>       
+        <li class="heading">Configuration</li>
+        <li><a href="assessment.html"><i class="fa fa-check-circle"></i> Assessment</a></li>
+        <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
+        <li><a href="template.html"><i class="fa fa-clone custom"></i> Template</a></li>
+        <li><a href="questionnaire.html"><i class="fa fa-question-circle"></i> Questionnaire</a></li>
+        <li><a href="application.html"><i class="fa fa-desktop custom"></i> Application</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Fragment for Header -->
+<div id="header" th:fragment="header">
+<header class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+      <div class="logo"><a href="index.html"></a></div>     
+    </div>
+    <div class="col-lg-3 col-md-2 hidden-sm-down">
+      <div class="search"><i class="fa fa-search"></i>
+        <input type="text" name="search" id="search" placeholder="" />
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-5 hidden-sm-down">
+      <div class="userInfo">
+        <ul>
+          <li>
+            <select class="language">
+              <option>Language</option>
+              <option value="eng" selected>English</option>
+              <option value="fr">French</option>
+            </select>
+          </li>
+          <li><a href="#">My Profile</a></li>
+          <!-- <li><a href="#">Logout</a></li> -->
+          <li><a th:href="@{/logout}">Logout</a></li>
+          <li><span class="users"><img src="images/user.png" align="User Picture" /></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</header>
+</div>
+
+ <div id="footer" th:fragment="footer">
+ <footer class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <div class="copyright">&copy; HCL 2018</div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+          <div class="links">
+			<ul>
+              <li><a href="help.html">Help</a></li><li><a href="support.html">Support</a></li><li><a href="term.html">Term of Use</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+   </div>> 
+</body>
+</html>
