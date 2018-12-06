@@ -15,7 +15,7 @@
 <script type="text/javascript" th:src="@{js/plugins.js}" src="../static/js/plugins.js"></script>
 </th:block>
 <body>
-<!-- Fragment for Sidebar -->
+<!-- Fragment for Sidebar admin -->
 <div id="sidebar" th:fragment="sidebar">
   <div class="sideContent">
     <div class="menu">
@@ -23,6 +23,22 @@
         <li class="heading">Foundation</li>
         <li class="current"><a href="user.html"><i class="fa fa-user-circle-o"></i> User</a></li>
          <li><a th:href="@{/company}"><i class="fa fa-building-o"></i>Company</a></li>       
+        <li class="heading">Configuration</li>
+        <li><a href="assessment.html"><i class="fa fa-check-circle"></i> Assessment</a></li>
+        <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
+        <li><a href="template.html"><i class="fa fa-clone custom"></i> Template</a></li>
+        <li><a href="questionnaire.html"><i class="fa fa-question-circle"></i> Questionnaire</a></li>
+        <li><a href="application.html"><i class="fa fa-desktop custom"></i> Application</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Fragment for Sidebar user -->
+<div id="sidebar" th:fragment="sidebaruser">
+  <div class="sideContent">
+    <div class="menu">
+      <ul>           
         <li class="heading">Configuration</li>
         <li><a href="assessment.html"><i class="fa fa-check-circle"></i> Assessment</a></li>
         <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
