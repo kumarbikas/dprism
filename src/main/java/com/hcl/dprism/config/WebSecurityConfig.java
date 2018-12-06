@@ -1,11 +1,12 @@
 package com.hcl.dprism.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 
 @EnableWebSecurity
@@ -42,15 +43,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 			throws Exception {
 
-		auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
+		/*auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
 		.withUser("appuser")
 		.password("app123").roles("USER")
 		.and()
 		.withUser("admin")
 		.password("admin123")
-		.roles("USER", "ADMIN");;
+		.roles("USER", "ADMIN");*/
+		
+		auth.inMemoryAuthentication()
+        .withUser("appuser").password(passwordEncoder().encode("app123")).roles("USER")
+        .and()
+        .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN");
 	}
 
+	@Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 	
 	
 }
