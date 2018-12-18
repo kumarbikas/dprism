@@ -16,8 +16,10 @@
 #content{padding:0 20px 0 0;position:relative;transition:all 0.3s;width:100%;}	
 #sidebar{margin-left:-240px;}
 #sidebar.active{margin-left:0;}
-#content{padding:0 20px;}
-.mainContent{padding:15px;}
+#content{padding:0 10px;}
+#mainContent{padding:0.625rem;}
+
+
 
 /* Login Home Page */
 .homePage p{padding:0;}
@@ -29,6 +31,9 @@
 #sidebar nav ul li ul li{background-color:#5577ab;}
 #sidebar nav ul li:hover ul li:hover{background-color:#4b6b9c;}
 #sidebar nav ul li.has-sub > a:after{content:'»';font-size:1.375rem;position:static;right:1em;}
+
+/* Pagination */
+.pagination{margin:.2rem 0 .5rem 0;}
 
 
 }
