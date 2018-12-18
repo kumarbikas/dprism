@@ -24,7 +24,7 @@
         <li class="current"><a href="user.html"><i class="fa fa-user-circle-o"></i> User</a></li>
          <li><a th:href="@{/company}"><i class="fa fa-building-o"></i>Company</a></li>       
         <li class="heading">Configuration</li>
-        <li><a href="assessment.html"><i class="fa fa-check-circle"></i> Assessment</a></li>
+        <li><a href="@{/assessment}"><i class="fa fa-check-circle"></i> Assessment</a></li>
         <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
         <li><a href="template.html"><i class="fa fa-clone custom"></i> Template</a></li>
         <li><a href="questionnaire.html"><i class="fa fa-question-circle"></i> Questionnaire</a></li>
@@ -40,7 +40,7 @@
     <div class="menu">
       <ul>           
         <li class="heading">Configuration</li>
-        <li><a href="assessment.html"><i class="fa fa-check-circle"></i> Assessment</a></li>
+         <li><a href="@{/assessment}"><i class="fa fa-check-circle"></i> Assessment</a></li>
         <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
         <li><a href="template.html"><i class="fa fa-clone custom"></i> Template</a></li>
         <li><a href="questionnaire.html"><i class="fa fa-question-circle"></i> Questionnaire</a></li>
@@ -54,7 +54,8 @@
 <header class="container-fluid">
   <div class="row">
     <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
-      <div class="logo"><a href="index.html"></a></div>     
+      <div class="logo"><a href="index.html"></a></div>
+      <div class="comLogo"><a href="index.html"></a></div>           
     </div>
     <div class="col-lg-3 col-md-2 hidden-sm-down">
       <div class="search"><i class="fa fa-search"></i>

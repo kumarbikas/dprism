@@ -23,11 +23,11 @@ public class ServicesController {
 	private ServicesRepository servicesRepo;
 	@GetMapping("/services")
 	public String showServices(Model model,@RequestParam(defaultValue="0")int page){
-		System.out.println("TESTING 1");
+		/*System.out.println("TESTING 1");
 		model.addAttribute("data",servicesRepo.findAll(PageRequest.of(page, 4)));
 		
-		model.addAttribute("currentPage", page);
-		return "servicesView";
+		model.addAttribute("currentPage", page);*/
+		return "services";
 	}
 	@PostMapping("/saveServices")
 	public String saveServices(Services services) {

@@ -1,0 +1,290 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="service exchange theme">
+<meta name="keywords" content="service theme">
+<title>Services</title>
+<th:block th:insert="fragments :: cssfiles"></th:block>
+</head>
+<body>
+<header class="container-fluid">
+ <div th:replace="fragments :: header"></div>
+</header>
+<!--Header End-->
+<div id="wrapper">
+  <div sec:authorize="hasRole('ADMIN')">
+  <div th:replace="fragments :: sidebar"></div>
+</div>
+<div sec:authorize="hasRole('USER')">
+  <div th:replace="fragments :: sidebaruser"></div>
+</div>
+  <!--Sidebar Content End-->
+  <div id="content">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="bcrumb">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Services</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="create" data-toggle="modal" data-target="#createCompany">Create Services</div>
+      </div>
+    </div>
+    <div id="mainContent">
+      <div class="btnArrow"><i class="fa fa-angle-double-left"></i></div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="filter"> Filter By
+          <select class="form-control" id="filter">
+            <option>Select</option>
+            <option>Assessment Name</option>
+            <option>Services Name</option>
+          </select>
+          <input type="text" class="" name="filter" />
+          <button id="filterData" class="smFilter"><i class="fa fa-filter"></i> </button>
+        </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="pagination">
+            <select id="show" class="showItem">
+              <option>Show 10</option>
+              <option>Show 20</option>
+              <option>Show 50</option>
+              <option>Show 100</option>
+            </select>
+            <a href="#" class="page"><i class="fa fa-angle-double-left"></i></a> <a href="#" class="page">1</a> <a href="#" class="page gradient">2</a> 
+            <span class="page active">3</span> <a href="#" class="page">4</a> <a href="#" class="page">5</a> 
+            <a href="#" class="page"><i class="fa fa-angle-double-right"></i></a> </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table common">
+          <thead>
+            <tr>
+              <th>Assessment Name</th>
+              <th>Services Name</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GSA</td>
+              <td>GSA_Preliminary</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>AEF</td>
+              <td>AEF_Deepdive</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>GSA</td>
+              <td>GSA_Preliminary</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>AEF</td>
+              <td>AEF_Deepdive</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>GSA</td>
+              <td>GSA_Preliminary</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>AEF</td>
+              <td>AEF_Deepdive</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>GSA</td>
+              <td>GSA_Preliminary</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+            <tr>
+              <td>AEF</td>
+              <td>AEF_Deepdive</td>
+              <td>Active</td>
+              <td><span data-toggle="modal" data-target="#editCompany" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> <span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--Main Content End-->
+     <div th:replace="fragments :: footer"></div>
+  </div>
+</div>
+
+<!---------------------------- The Modals for Create Company and Edit Company ---------------------------->
+<div class="modalData">
+  <div class="modal" id="createCompany">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create Services</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="formArticle">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment Name</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                    <option>GSA</option>
+                    <option>AEF</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label class="no">Services Name </label>
+                  <input type="text" name="serviceName" class="form-control" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label class="no">Status</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+              <div class="buttonGroup">
+                <button type="button" class="btn btnSave mr-2">Save</button>
+                <button type="button" class="btn btnCancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editCompany">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Company</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="formArticle">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment Name</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                    <option selected>GSA</option>
+                    <option>AEF</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label class="no">Services Name </label>
+                  <input type="text" name="serviceName" class="form-control" placeholder="GSA_Preliminary"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label class="no">Status</label>
+                  <select class="form-control">
+                    <option>Select</option>
+                    <option selected>Active</option>
+                    <option>Inactive</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tabParts">
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item"><a class="nav-link" href="#systemInfo" role="tab" data-toggle="tab" aria-selected="false">System Information</a></li>
+                      <li class="nav-item"><a class="nav-link active show" href="#history" role="tab" data-toggle="tab" aria-selected="true">History</a></li>
+                    </ul>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade" id="systemInfo" role="tabpanel" aria-labelledby="list-sysInfo-list">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Created On</label>
+                            <input type="text" name="createdon" class="form-control" />
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Created By</label>
+                            <input type="text" name="createdby" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Modified On</label>
+                            <input type="text" name="modifyon" class="form-control" />
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Modified By</label>
+                            <input type="text" name="modifyby" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade active show" id="history" role="tabpanel" aria-labelledby="list-history-list">
+                        <table class="table inner">
+                          <thead>
+                            <tr>
+                              <th>Field Name</th>
+                              <th>Old Value</th>
+                              <th>New Value</th>
+                              <th>Updated By</th>
+                              <th>Updated On</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttonGroup">
+                <button type="button" class="btn btnSave mr-2">Save</button>
+                <button type="button" class="btn btnCancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Included Javascript Files Details--> 
+<th:block th:insert="fragments :: scriptfiles"></th:block>
+</body>
+</html>
