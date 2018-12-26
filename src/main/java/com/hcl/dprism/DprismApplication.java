@@ -4,17 +4,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templateresolver.ITemplateResolver;
-import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
+
+import com.hcl.dprism.utils.DateConverter;
 /**
- * Dprism Application
+ * Dprizm Application
  * @author bikash.k
  *
  */
-//@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+
 @SpringBootApplication
-@ComponentScan({"com.hcl.dprism.*,org.thymeleaf.extras.springsecurity4"})
+@ComponentScan({"com.hcl.dprism.*,org.thymeleaf.extras.*,com.hcl.dprism.utils.*"})
 //@Component("com.hcl.dprism.*")
 public class DprismApplication {
 	
@@ -28,6 +31,19 @@ public class DprismApplication {
    	    final SpringTemplateEngine templateEngine = new SpringTemplateEngine();
    	    templateEngine.setTemplateResolver(templateResolver);
    	    templateEngine.addDialect(sec); // Enable use of "sec"
+   	 templateEngine.addDialect(new Java8TimeDialect()); 
    	    return templateEngine;
-   	}	
+   	}
+   	
+  	@Bean
+    public DateConverter DateConverter() {
+        return new DateConverter();
+    }
+   	
+  /* 	private ISpringTemplateEngine templateEngine(ITemplateResolver templateResolver,Java8TimeDialect jd) {
+   	    SpringTemplateEngine engine = new SpringTemplateEngine();
+   	    engine.addDialect(new Java8TimeDialect());
+   	    engine.setTemplateResolver(templateResolver);
+   	    return engine;
+   	}*/
 }

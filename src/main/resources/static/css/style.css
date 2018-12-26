@@ -69,7 +69,7 @@ text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:
 #sidebar .menu .sidebar-submenu a{padding-left:1.5rem;}
 #sidebar .menu a:hover, #sidebar .menu li a:hover i{color:#ffb811;}
 #sidebar .menu .sidebar-dropdown.active > a:after{transform:rotate(90deg);right:1.0625rem;}
-#sidebar .menu li.current a, #sidebar .menu li.current a i{color:#ffb811;text-transform:uppercase;}
+#sidebar .menu li a.current, #sidebar .menu li a.current i{color:#ffb811;text-transform:uppercase;}
 /*.sidebar-dropdown.active{background:#a6d05b;}*/
 
 /* Headings */
@@ -124,7 +124,7 @@ table.inner tr:nth-child(odd){background:#fff;}
 table.inner tr:nth-child(even){background:#f7f7f7;}
 
 /* Form Elements */
-.error{border:1px solid #f00;}
+.error{color:#f00;font-size:13px;font-style:italic;}
 .formArticle{clear:both;}
 .formArticle label{color:#353131;font-size:0.875rem;font-weight:500;margin:.5rem 0;}
 .formArticle label:after{content:"*";color:#ff4a4a;}

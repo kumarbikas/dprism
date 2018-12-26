@@ -47,6 +47,9 @@ dependencies {
 	compile group: 'org.webjars', name: 'bootstrap', version: '4.1.2'
 	// https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5
 compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+// https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-java8time
+compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time', version: '3.0.1.RELEASE'
+
 
 	
 }

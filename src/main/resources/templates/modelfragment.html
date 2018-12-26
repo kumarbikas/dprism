@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<div class="modalData" th:fragment="modelAssessment">
+  <div class="modal" id="createAssessment">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create Assessment</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="createAsmtForm">
+            <form th:action="@{/saveAssessment}" method="post">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment ID</label>
+                  <input type="text" name="assessmentId" id= "assessmentId" class="form-control" disabled="disabled" />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment Name</label>
+                  <input type="text" name="assessmentName" id= "assessmentName" class="form-control" />
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="row">
+              	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="no">Start Date</label>
+					<input name="startDate" class="form-control crtStart" id= "startDate" />
+                    <span class="dateIcon"><i class="fa fa-calendar"></i></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="no">End Date</label>
+				<input name="endDate" class="form-control crtEnd" id= "endDate"/>
+                <span class="dateIcon"><i class="fa fa-calendar"></i></span>
+                </div>
+              
+              </div>
+              </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  	 <label class="no">Status</label>
+                     <select name="active" id="active" class="form-control">
+                        <option value= "1">Active</option>
+                        <option value="0">Inactive</option>
+                      </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <label class="no">Description</label>
+                  <textarea id="description" name= "description" class="form-control" rows="2" col="3" ></textarea>
+                </div>
+              </div>
+              <div class="buttonGroup">
+              <!--   <button type="button" class="btn btnSave mr-2">Save</button> -->
+                <input type="submit" class="btn btnSave mr-2" value="submit"/>
+                <button type="button" class="btn btnCancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editAssessment">
+    <div class="modal-dialog">
+      <div class="modal-content"> 
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Assessment</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="editAsmtForm">
+            <form action="#" method="post">
+              		<div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment ID</label>
+                  <input type="text" name="assessmentId" id= "assessmentId" class="form-control" disabled="disabled" />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <label>Assessment Name</label>
+                 <input type="text" name="assessmentName" id= "assessmentName" class="form-control" />
+                </div>
+              </div>
+             		<div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="row">
+              	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="no">Start Date</label>
+					<input name="startsOn" class="form-control crtStart" id= "startsOn" />
+                    <span class="dateIcon"><i class="fa fa-calendar"></i></span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <label class="no">End Date</label>
+					<input name="endsOn" class="form-control crtEnd" id= "endsOn"/>
+                    <span class="dateIcon"><i class="fa fa-calendar"></i></span>
+                </div>
+              
+              </div>
+              </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  	 <label class="no">Status</label>
+                     <select class="form-control">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                </div>
+              </div>
+             		<div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <label class="no">Description</label>
+                  <textarea class="form-control" rows="2" col="3" id="description"></textarea>
+                </div>
+              </div>
+              <div class="tabParts">
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item"><a class="nav-link active show" href="#systemInfo" role="tab" data-toggle="tab" aria-selected="false">System Information</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#history" role="tab" data-toggle="tab" aria-selected="true">History</a></li>
+                    </ul>
+                    <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade active show" id="systemInfo" role="tabpanel" aria-labelledby="list-sysInfo-list">
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Created On</label>
+                            <input type="text" name="createdon" class="form-control" />
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Created By</label>
+                            <input type="text" name="createdby" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Modified On</label>
+                            <input type="text" name="modifyon" class="form-control" />
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label class="no">Modified By</label>
+                            <input type="text" name="modifyby" class="form-control" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="list-history-list">
+                        <table class="table inner">
+                          <thead>
+                            <tr>
+                              <th>Field Name</th>
+                              <th>Old Value</th>
+                              <th>New Value</th>
+                              <th>Updated By</th>
+                              <th>Updated On</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                              <td>Lorum Lipsume</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="buttonGroup">
+                <button type="button" class="btn btnSave mr-2">Update</button>
+                <button type="button" class="btn btnCancel" data-dismiss="modal">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

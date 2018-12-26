@@ -1,14 +1,12 @@
 package com.hcl.dprism.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="ASSESSMENT_MASTER")
@@ -17,17 +15,22 @@ public class Assessment {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ASSESSMENT_ID")
 	private int assessmentId;
+	
 	@Column(name="ASSESSMENT_CODE")
 	private String assessmentCode;
+	
 	@Column(name="ASSESSMENT_NAME")
 	private String assessmentName;
+	
 	@Column(name="DESCRIPTION")
 	private String description;
+	
 	@Column(name="Active")
-	private int active;
+	private String active;
+	
 	@Column(name="CREATED_BY")
 	private String createdBy;
-	
+
 	@Column(name="CREATED_ON")
 	private Long createdOn;
 	
@@ -37,10 +40,47 @@ public class Assessment {
 	@Column(name="MODIFIED_ON")
 	private Long modifiedOn;
 	
-	/*@OneToOne(fetch = FetchType.EAGER,
-            cascade =  CascadeType.ALL,
-            mappedBy = "assessment")
-    private Services services;*/
+	@Column(name="STARTS_ON")
+	private Long startsOn;
+	
+	@Column(name="ENDS_ON")
+	private Long endsOn;
+	
+	@Transient
+	private String startDate;
+	
+	@Transient
+	private String endDate;
+
+	@Transient
+	public String getStartDate() {
+		return startDate;
+	}
+	
+	
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+	
+	@Transient
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+	public Long getStartsOn() {
+		return startsOn;
+	}
+	public void setStartsOn(Long startsOn) {
+		this.startsOn = startsOn;
+	}
+	public Long getEndsOn() {
+		return endsOn;
+	}
+	public void setEndsOn(Long endsOn) {
+		this.endsOn = endsOn;
+	}
 	public int getAssessmentId() {
 		return assessmentId;
 	}
@@ -89,10 +129,10 @@ public class Assessment {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getActive() {
-		return active;
+	public String getActive() {
+		return "1".equals(active)?"Active":"InActive";
 	}
-	public void setActive(int active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 	/*public Services getServices() {

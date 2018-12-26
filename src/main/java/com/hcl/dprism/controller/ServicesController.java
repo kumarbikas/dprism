@@ -42,7 +42,7 @@ public class ServicesController {
 		Assessment assessment=new Assessment();
 		assessment.setAssessmentName("TestAssessment3");
 		assessment.setDescription("assessmentdesc3");
-		assessment.setActive(1);
+		assessment.setActive("1");
 		assessment.setAssessmentCode("ASC000003");
 		assessment.setCreatedOn(System.currentTimeMillis());
 		assessment.setCreatedBy("harleen_kaur");// will be replaced by looged in user//

@@ -3,6 +3,9 @@
  * 
  */
 $(document).ready(function(){
+	//default settings
+	pageLoadSetting();
+	//company edit and create
 	$('.nBtn, .table .eBtn').on('click',function(event){		
 		event.preventDefault();
 		var href=$(this).attr('href');
@@ -49,9 +52,6 @@ $(document).ready(function(){
 		return;
 		}
 		else{
-			
-			
-			
 			$('.companyForm #companyId').prop( "disabled", true );
 			$('.companyForm #companyName').val('');
 			$('.companyForm #description').val('');
@@ -78,7 +78,35 @@ $(document).ready(function(){
 		}
 	});
 	
+//Create and edit Assessment	
+	
+	$('.createAsmt').on('click',function(event){
+		console.log("Create Assessment Clicked1");
+		event.preventDefault();
+		$('.createAsmtForm #assessmentId').prop( "disabled", true );
+		$('.createAsmtForm #assessmentName').val('');
+		/*$('.createAsmtForm #description').val('');
+		$('.createAsmtForm #createdBy').val('');*/
+		//added//
+		$('#createAssessment').modal();
+		console.log("Create Assessment Clicked2");
+	});
+	
 });
 
 
+/**
+ * javascript functions
+*/
+function func_pageSize(){
+	var pageSize=$('#pageSize').val();
+	//alert("calling pagesize"+pageSize);
+	window.location = "/assessment?page=0&pageSize="+pageSize;
+ }
 
+//default setting to be called on load of page
+function pageLoadSetting(){
+	//alert("page load session:"+$('#ssnPageSize').val());
+	$("div.pagination select").val($('#ssnPageSize').val());
+
+ }

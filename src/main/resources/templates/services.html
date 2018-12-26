@@ -4,23 +4,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="service exchange theme">
+<meta name="description" content="Digital Prizm">
 <meta name="keywords" content="service theme">
 <title>Services</title>
 <th:block th:insert="fragments :: cssfiles"></th:block>
 </head>
 <body>
-<header class="container-fluid">
  <div th:replace="fragments :: header"></div>
-</header>
 <!--Header End-->
 <div id="wrapper">
-  <div sec:authorize="hasRole('ADMIN')">
-  <div th:replace="fragments :: sidebar"></div>
-</div>
-<div sec:authorize="hasRole('USER')">
-  <div th:replace="fragments :: sidebaruser"></div>
-</div>
+<div sec:authorize="hasRole('ADMIN')" th:replace="fragments :: sidebar"></div>
+<div sec:authorize="hasRole('USER')" th:replace="fragments :: sidebaruser"></div>
   <!--Sidebar Content End-->
   <div id="content">
     <div class="row">
