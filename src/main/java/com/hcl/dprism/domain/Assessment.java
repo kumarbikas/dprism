@@ -28,10 +28,10 @@ public class Assessment {
 	@Column(name="Active")
 	private String active;
 	
-	@Column(name="CREATED_BY")
+	@Column(name="CREATED_BY",insertable = true, updatable = false)
 	private String createdBy;
 
-	@Column(name="CREATED_ON")
+	@Column(name="CREATED_ON",insertable = true, updatable = false)
 	private Long createdOn;
 	
 	@Column(name="MODIFIED_BY")
@@ -130,7 +130,8 @@ public class Assessment {
 		this.description = description;
 	}
 	public String getActive() {
-		return "1".equals(active)?"Active":"InActive";
+		//return "1".equals(active)?"Active":"InActive";
+		return this.active;
 	}
 	public void setActive(String active) {
 		this.active = active;

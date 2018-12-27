@@ -33,6 +33,15 @@ public class AssessmentServiceImpl implements AssessmentService{
 		assessment.setModifiedOn(System.currentTimeMillis());
 		assessmentRepo.save(assessment);
 	}
+
+	@Override
+	public Assessment findById(Integer assessmentId) {
+		// TODO Auto-generated method stub
+		Assessment assessment = assessmentRepo.findById(assessmentId).get();
+		assessment.setStartDate(dateconverter.serialize(assessment.getStartsOn()));
+		assessment.setEndDate(dateconverter.serialize(assessment.getEndsOn()));
+		return assessment;
+	}
 	
 	
 

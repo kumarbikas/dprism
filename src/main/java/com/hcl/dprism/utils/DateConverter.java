@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.SerializerProvider;
+
 public class DateConverter {
 	@Autowired
 	HttpServletRequest request;
@@ -18,6 +21,7 @@ public class DateConverter {
 	//private String dateF = "dd-MM-yyyy hh:mm";
 	private String dateF = "dd-MM-yyyy";
 	private SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateF);
+	private Calendar calendar = Calendar.getInstance();
 	
 	public Long deserialize(String txtDate)
 			{
@@ -43,6 +47,34 @@ public class DateConverter {
 		}
 
 		return new Long(dateTimeInMillis);
+	}
+	
+	/**
+	 * Long to Date
+	 * @param tmpBigInt
+	 * @return
+	 */
+	public String serialize(Long tmpBigInt){
+
+		
+
+			//String dateFormat = request.getHeader("date_format");
+			//String timeZone = request.getHeader("time_zone");
+
+			calendar.setTimeInMillis(
+					Long.parseLong(String.format("%0$-" + 13 + "s", tmpBigInt.toString()).replace(" ", "0")));
+
+			/*if (dateFormat != null) {
+				simpleDateFormat = new SimpleDateFormat(dateFormat);
+			}
+			if (timeZone != null) {
+				simpleDateFormat.setTimeZone(TimeZone.getTimeZone(timeZone));
+			}
+
+		} 
+			jsonGenerator.writeObject(simpleDateFormat.format(calendar.getTime()));
+		*/
+			return simpleDateFormat.format(calendar.getTime());
 	}
 
 }

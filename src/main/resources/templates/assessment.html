@@ -87,8 +87,8 @@
 		 	<td th:text="${assessment.assessmentName}"></td>		
 		 	<td th:text="${#dates.format(assessment.startsOn, 'dd-MM-yyyy HH:mm:ss')}">date</td>
 		 	<td th:text="${#dates.format(assessment.endsOn, 'dd-MM-yyyy HH:mm:ss')}">date</td>
-		 	<td th:text="${assessment.active}"></td>
-		 	<td><span data-toggle="modal" data-target="#editAssessment" class="mr-1" title="Edit"><i class="fa fa-pencil-square-o"></i></span> 
+		 	<td th:text="${assessment.active}==1?'Active':'InActive'"></td>
+		 	<td><a class="editAsmt mr-1" title="Edit" th:href="@{/findOneAssessment/(assessmentId=${assessment.assessmentId})}"><i class="fa fa-pencil-square-o"></i></a> 
 		 	<span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>	
 		</tr>            
           </tbody>

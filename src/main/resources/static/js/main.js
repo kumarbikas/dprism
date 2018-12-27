@@ -84,12 +84,28 @@ $(document).ready(function(){
 		console.log("Create Assessment Clicked1");
 		event.preventDefault();
 		$('.createAsmtForm #assessmentId').prop( "disabled", true );
-		$('.createAsmtForm #assessmentName').val('');
-		/*$('.createAsmtForm #description').val('');
-		$('.createAsmtForm #createdBy').val('');*/
+		$('.createAsmtForm #assessmentName').val('');		
 		//added//
 		$('#createAssessment').modal();
-		console.log("Create Assessment Clicked2");
+		console.log("Create Assessment Clicked2");		
+	});
+//Edit Assessment	
+	$('.editAsmt').on('click',function(event){
+		console.log("Edit Assessment Clicked1");
+		event.preventDefault();
+		var href=$(this).attr('href');
+		console.log("href:"+href);
+		$.get(href,function(assessment,status){
+		$('.editAsmtForm #assessmentId').val(assessment.assessmentId);
+		$('.editAsmtForm #assessmentCode').val(assessment.assessmentCode);
+		$('.editAsmtForm #assessmentName').val(assessment.assessmentName);
+		$('.editAsmtForm #description').val(assessment.description);
+		console.log(assessment.startDate);
+		$('.editAsmtForm #active').val(assessment.active);
+		$('.editAsmtForm #startDate').val(assessment.startDate);
+		$('.editAsmtForm #endDate').val(assessment.endDate);
+		$('#editAssessment').modal();
+		});
 	});
 	
 });

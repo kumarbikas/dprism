@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hcl.dprism.domain.Assessment;
+import com.hcl.dprism.domain.Company;
 import com.hcl.dprism.service.AssessmentService;
 
 
@@ -38,5 +40,11 @@ public class AssessmentController {
 		System.out.println("printing assessment id:"+assessment.getAssessmentCode());
 		return "redirect:/assessment";
 		
+	}
+	
+	@GetMapping("/findOneAssessment")
+	@ResponseBody
+	public Assessment findOne(Integer assessmentId){	
+		return assessmentService.findById(assessmentId);
 	}
 }

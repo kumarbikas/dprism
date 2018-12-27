@@ -11,5 +11,7 @@ public interface AssessmentService {
 	Page<Assessment> findAllAssessmentPagewise(int page,int pageSize);
 	
 	public void save(Assessment assessment);
+	
+	public Assessment findById(Integer assessmentId);
 
 }
