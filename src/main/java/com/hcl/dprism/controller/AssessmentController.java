@@ -42,6 +42,14 @@ public class AssessmentController {
 		
 	}
 	
+	@GetMapping("/deleteAssessment")
+	public String deleteCompany(Integer assessmentId) {
+		assessmentService.deleteById(assessmentId);
+		//companyRepo.deleteById(companyId);
+		return "redirect:/assessment";
+		
+	}
+	
 	@GetMapping("/findOneAssessment")
 	@ResponseBody
 	public Assessment findOne(Integer assessmentId){	

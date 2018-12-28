@@ -13,5 +13,7 @@ public interface AssessmentService {
 	public void save(Assessment assessment);
 	
 	public Assessment findById(Integer assessmentId);
+	
+	public void deleteById(Integer assessmentId);
 
 }

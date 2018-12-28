@@ -42,6 +42,12 @@ public class AssessmentServiceImpl implements AssessmentService{
 		assessment.setEndDate(dateconverter.serialize(assessment.getEndsOn()));
 		return assessment;
 	}
+
+	@Override
+	public void deleteById(Integer assessmentId) {
+		// TODO Auto-generated method stub
+		assessmentRepo.deleteById(assessmentId);
+	}
 	
 	
 

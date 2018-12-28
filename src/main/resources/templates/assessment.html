@@ -60,10 +60,10 @@
 		<a th:href="@{/assessment(page=${(i-1)})}" th:text="${i}"
 		 th:classappend="${currentPage}==${i-1}?'active'" class="page gradient"></a>
 		</th:block>
-              <th:block th:if="${currentPage}<${data.totalPages}">
+              <th:block th:if="${currentPage}<${data.totalPages-1}">
             <a th:href="@{/assessment(page=${(currentPage+1)})}" class="page"><i class="fa fa-angle-double-right"></i></a>
             </th:block>
-            <th:block th:unless="${currentPage}<=${data.totalPages}">
+            <th:block th:unless="${currentPage}<${data.totalPages-1}">
             <a href="#" class="page"><i class="fa fa-angle-double-right"></i></a>
        		</th:block>
             </div>         
@@ -89,7 +89,7 @@
 		 	<td th:text="${#dates.format(assessment.endsOn, 'dd-MM-yyyy HH:mm:ss')}">date</td>
 		 	<td th:text="${assessment.active}==1?'Active':'InActive'"></td>
 		 	<td><a class="editAsmt mr-1" title="Edit" th:href="@{/findOneAssessment/(assessmentId=${assessment.assessmentId})}"><i class="fa fa-pencil-square-o"></i></a> 
-		 	<span class="delBtn" title="Delete"><i class="fa fa-trash"></i></span></td>	
+		 	<a class="delBtn assDelete" title="Delete" th:href="@{/deleteAssessment/(assessmentId=${assessment.assessmentId})}"><i class="fa fa-trash"></i></a></td>	
 		</tr>            
           </tbody>
         </table>

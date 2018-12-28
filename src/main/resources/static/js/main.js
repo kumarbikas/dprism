@@ -108,6 +108,15 @@ $(document).ready(function(){
 		});
 	});
 	
+//Delete Assessment
+	$('.assDelete').on('click',function(event){
+		event.preventDefault();
+		var href=$(this).attr('href');
+		console.log(href);
+		$('#deleteAssessmentModal #delRef').attr('href',href);
+		$('#deleteAssessmentModal').modal();		
+	});
+	
 });
 
 
