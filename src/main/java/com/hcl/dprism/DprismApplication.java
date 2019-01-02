@@ -9,6 +9,8 @@ import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
+import com.hcl.dprism.dao.AppRoleDAO;
+import com.hcl.dprism.service.UserDetailsServiceImpl;
 import com.hcl.dprism.utils.DateConverter;
 /**
  * Dprizm Application
@@ -39,6 +41,17 @@ public class DprismApplication {
     public DateConverter DateConverter() {
         return new DateConverter();
     }
+  	
+  	@Bean
+  	public UserDetailsServiceImpl UserDetailsServiceImpl() {
+  		return new UserDetailsServiceImpl();
+  	}
+  	
+ 	@Bean
+  	public AppRoleDAO AppRoleDAO() {
+  		return new AppRoleDAO();
+  	}
+  	
    	
   /* 	private ISpringTemplateEngine templateEngine(ITemplateResolver templateResolver,Java8TimeDialect jd) {
    	    SpringTemplateEngine engine = new SpringTemplateEngine();

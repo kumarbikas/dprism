@@ -49,6 +49,22 @@
     </div>
   </div>
 </div>
+<!-- Fragment for Sidebar user -->
+<div id="sidebar" th:fragment="sidebarmanager">
+  <div class="sideContent">
+    <div class="menu">
+      <ul>
+      	<li><a th:href="@{/company}"><i class="fa fa-building-o"></i>Company</a></li>           
+        <li class="heading">Configuration</li>
+         <li><a th:href="@{/assessment}"><i class="fa fa-check-circle"></i> Assessment</a></li>
+        <li><a th:href="@{/services}"><i class="fa fa-cog custom"></i> Services</a></li>
+        <li><a href="template.html"><i class="fa fa-clone custom"></i> Template</a></li>
+        <li><a href="questionnaire.html"><i class="fa fa-question-circle"></i> Questionnaire</a></li>
+        <li><a href="application.html"><i class="fa fa-desktop custom"></i> Application</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <!-- Fragment for Header -->
 <div id="header" th:fragment="header">
 <header class="container-fluid">

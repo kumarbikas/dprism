@@ -8,9 +8,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.hcl.dprism.service.UserDetailsServiceImpl;
+
 
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	 @Autowired
+	    private UserDetailsServiceImpl userDetailsService;
 	
 	/*@Override
 	public void configure(HttpSecurity http) throws Exception {
@@ -28,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/").access("hasAnyRole('USER', 'ADMIN')")					
+		http.authorizeRequests().antMatchers("/").access("hasAnyRole('USER', 'ADMIN','MANAGER')")					
 				.antMatchers("/css/**", "/images/**","/**/*.js").permitAll()				
 				.anyRequest().authenticated().and().formLogin()
 				.loginPage("/login").permitAll().and().logout().permitAll();
@@ -43,18 +48,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth)
 			throws Exception {
 
-		/*auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
-		.withUser("appuser")
-		.password("app123").roles("USER")
-		.and()
-		.withUser("admin")
-		.password("admin123")
-		.roles("USER", "ADMIN");*/
-		
-		auth.inMemoryAuthentication()
+		/*auth.inMemoryAuthentication()
         .withUser("appuser").password(passwordEncoder().encode("app123")).roles("USER")
         .and()
-        .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN");
+        .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN");*/
+		
+		// Setting Service to find User in the database.
+        // And Setting PassswordEncoder
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
 
 	@Bean

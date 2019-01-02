@@ -14,6 +14,7 @@
 <div id="wrapper"> 
 <div sec:authorize="hasRole('ADMIN')" th:replace="fragments :: sidebar"></div>
 <div sec:authorize="hasRole('USER')" th:replace="fragments :: sidebaruser"></div>
+<div sec:authorize="hasRole('MANAGER')" th:replace="fragments :: sidebarmanager"></div>
   <!--Sidebar Content End-->
   <div id="content">
     <div class="row">
